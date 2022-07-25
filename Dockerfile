@@ -1,6 +1,6 @@
 FROM busybox:latest as entrypoint
 
-ENV TINI_VERSION v0.18.0
+ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
@@ -8,7 +8,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 FROM debian:latest
-ARG SQUID_VERSION=4.6-1+deb10u1
+ARG SQUID_VERSION=4.13-10+deb11u1
 
 LABEL maintainer="Logan V. <logan2211@gmail.com>"
 
